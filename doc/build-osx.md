@@ -51,7 +51,8 @@ Build Solidus Core
     Configure and build the headless Solidus Core binaries as well as the GUI (if Qt is found).
 
     You can disable the GUI build by passing `--without-gui` to configure.
-
+    
+        chmod +x *.sh 
         ./autogen.sh
         ./configure
         make
