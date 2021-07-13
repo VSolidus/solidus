@@ -54,6 +54,7 @@ Build Solidus Core
     
         chmod +x *.sh 
         ./autogen.sh
+        chmod 777 ./share/genbuild.sh
         ./configure
         make
 
