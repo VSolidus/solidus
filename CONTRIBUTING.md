@@ -17,17 +17,11 @@ release cycle, overall merging, moderation and appointment of maintainers.
 Communication Channels
 ----------------------
 
-Most communication about Solidus Core development happens on IRC, in the
-#solidus-dev channel on Freenode. The easiest way to participate on IRC is
-with the web client, [webchat.freenode.net](https://webchat.freenode.net/).
+Most communication about Solidus Core development happens on Discord. The easiest way to participate on Discord is
+with the app or web client (https://webchat.freenode.net/).
 
 Discussion about code base improvements happens in GitHub issues and on pull
 requests.
-
-The developer
-[mailing list](https://groups.google.com/forum/#!forum/solidus-dev)
-should be used to discuss complicated or controversial changes before working on
-a patch set.
 
 
 Contributor Workflow
