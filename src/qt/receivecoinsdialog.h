@@ -1,11 +1,11 @@
-// Copyright (c) 2011-2018 The Bitcoin Core developers
+// Copyright (c) 2011-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_RECEIVECOINSDIALOG_H
 #define BITCOIN_QT_RECEIVECOINSDIALOG_H
 
-#include <qt/guiutil.h>
+#include "guiutil.h"
 
 #include <QDialog>
 #include <QHeaderView>
@@ -15,6 +15,7 @@
 #include <QPoint>
 #include <QVariant>
 
+class OptionsModel;
 class PlatformStyle;
 class WalletModel;
 
@@ -39,7 +40,7 @@ public:
         MINIMUM_COLUMN_WIDTH = 130
     };
 
-    explicit ReceiveCoinsDialog(const PlatformStyle *platformStyle, QWidget *parent = nullptr);
+    explicit ReceiveCoinsDialog(const PlatformStyle *platformStyle, QWidget *parent = 0);
     ~ReceiveCoinsDialog();
 
     void setModel(WalletModel *model);

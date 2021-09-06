@@ -1,15 +1,15 @@
-Solidus Core
-=============
+Solidus Core 3.0.0
+=====================
 
 Setup
 ---------------------
-Solidus Core is the original Solidus client and it builds the backbone of the network. It downloads and, by default, stores the entire history of Solidus transactions, which requires approximately 22 gigabytes of disk space. Depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+Solidus Core is the original Solidus client and it builds the backbone of the network. However, it downloads and stores the entire history of Solidus transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Solidus Core, visit [vsolidus.com](https://vsolidus.com/).
+To download Solidus Core, visit [solidus.org](https://solidus.org).
 
 Running
 ---------------------
-The following are some helpful notes on how to run Solidus Core on your native platform.
+The following are some helpful notes on how to run Solidus on your native platform.
 
 ### Unix
 
@@ -22,41 +22,38 @@ Unpack the files into a directory and run:
 
 Unpack the files into a directory, and then run solidus-qt.exe.
 
-### macOS
+### OS X
 
-Drag Solidus Core to your applications folder, and then run Solidus Core.
+Drag Solidus-Core to your applications folder, and then run Solidus-Core.
 
 ### Need Help?
 
 * See the documentation at the [Solidus Wiki](https://solidus.info/)
 for help and more information.
 * Ask for help on [#solidus](http://webchat.freenode.net?channels=solidus) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=solidus).
-* Ask for help on the [SolidusTalk](https://solidustalk.io/) forums, in the [Technical Support section](https://solidustalk.io/c/technical-support).
+* Ask for help on the [SolidusTalk](https://solidustalk.io/) forums.
 
 Building
 ---------------------
-The following are developer notes on how to build Solidus Core on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+The following are developer notes on how to build Solidus on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
 
-- [Dependencies](dependencies.md)
-- [macOS Build Notes](build-osx.md)
+- [OS X Build Notes](build-osx.md)
 - [Unix Build Notes](build-unix.md)
 - [Windows Build Notes](build-windows.md)
-- [FreeBSD Build Notes](build-freebsd.md)
 - [OpenBSD Build Notes](build-openbsd.md)
-- [NetBSD Build Notes](build-netbsd.md)
-- [Gitian Building Guide (External Link)](https://github.com/bitcoin-core/docs/blob/master/gitian-building.md)
+- [Gitian Building Guide](gitian-building.md)
 
 Development
 ---------------------
 The Solidus repo's [root README](/README.md) contains relevant information on the development process and automated testing.
 
 - [Developer Notes](developer-notes.md)
-- [Productivity Notes](productivity.md)
 - [Release Notes](release-notes.md)
 - [Release Process](release-process.md)
+- [Source Code Documentation (External Link)](https://dev.visucore.com/solidus/doxygen/)
 - [Translation Process](translation_process.md)
 - [Translation Strings Policy](translation_strings_policy.md)
-- [JSON-RPC Interface](JSON-RPC-interface.md)
+- [Travis CI](travis-ci.md)
 - [Unauthenticated REST Interface](REST-interface.md)
 - [Shared Libraries](shared-libraries.md)
 - [BIPS](bips.md)
@@ -65,18 +62,16 @@ The Solidus repo's [root README](/README.md) contains relevant information on th
 
 ### Resources
 * Discuss on the [SolidusTalk](https://solidustalk.io/) forums.
-* Discuss general Solidus development on #solidus-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=solidus-dev.
+* Discuss general Solidus development on #solidus-dev on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net/?channels=solidus-dev).
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)
-- [bitcoin.conf Configuration File](bitcoin-conf.md)
 - [Files](files.md)
 - [Fuzz-testing](fuzzing.md)
 - [Reduce Traffic](reduce-traffic.md)
 - [Tor Support](tor.md)
 - [Init Scripts (systemd/upstart/openrc)](init.md)
 - [ZMQ](zmq.md)
-- [PSBT support](psbt.md)
 
 License
 ---------------------

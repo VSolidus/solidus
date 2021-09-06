@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2018 The Bitcoin Core developers
+// Copyright (c) 2009-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -7,10 +7,14 @@
 #define BITCOIN_COMPAT_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/bitcoin-config.h>
+#include "config/bitcoin-config.h"
 #endif
 
 #ifdef WIN32
+#ifdef _WIN32_WINNT
+#undef _WIN32_WINNT
+#endif
+#define _WIN32_WINNT 0x0501
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN 1
 #endif
@@ -27,9 +31,8 @@
 #include <mswsock.h>
 #include <windows.h>
 #include <ws2tcpip.h>
-#include <stdint.h>
 #else
-#include <fcntl.h>
+#include <sys/fcntl.h>
 #include <sys/mman.h>
 #include <sys/select.h>
 #include <sys/socket.h>
@@ -44,9 +47,11 @@
 #include <unistd.h>
 #endif
 
-#ifndef WIN32
-typedef unsigned int SOCKET;
-#include <errno.h>
+#ifdef WIN32
+#define MSG_DONTWAIT        0
+#else
+typedef u_int SOCKET;
+#include "errno.h"
 #define WSAGetLastError()   errno
 #define WSAEINVAL           EINVAL
 #define WSAEALREADY         EALREADY
@@ -68,35 +73,18 @@ typedef unsigned int SOCKET;
 #else
 #define MAX_PATH            1024
 #endif
-#ifdef _MSC_VER
-#if !defined(ssize_t)
-#ifdef _WIN64
-typedef int64_t ssize_t;
-#else
-typedef int32_t ssize_t;
-#endif
-#endif
+
+// As Solaris does not have the MSG_NOSIGNAL flag for send(2) syscall, it is defined as 0
+#if !defined(HAVE_MSG_NOSIGNAL) && !defined(MSG_NOSIGNAL)
+#define MSG_NOSIGNAL 0
 #endif
 
 #if HAVE_DECL_STRNLEN == 0
 size_t strnlen( const char *start, size_t max_len);
 #endif // HAVE_DECL_STRNLEN
 
-#ifndef WIN32
-typedef void* sockopt_arg_type;
-#else
-typedef char* sockopt_arg_type;
-#endif
-
-// Note these both should work with the current usage of poll, but best to be safe
-// WIN32 poll is broken https://daniel.haxx.se/blog/2012/10/10/wsapoll-is-broken/
-// __APPLE__ poll is broke https://github.com/bitcoin/bitcoin/pull/14336#issuecomment-437384408
-#if defined(__linux__)
-#define USE_POLL
-#endif
-
-bool static inline IsSelectableSocket(const SOCKET& s) {
-#if defined(USE_POLL) || defined(WIN32)
+bool static inline IsSelectableSocket(SOCKET s) {
+#ifdef WIN32
     return true;
 #else
     return (s < FD_SETSIZE);

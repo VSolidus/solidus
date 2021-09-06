@@ -1,5 +1,5 @@
-Building Solidus
+Building Bitcoin
 ================
 
 See doc/build-*.md for instructions on building the various
-elements of the Solidus Core reference implementation of Solidus.
+elements of the Bitcoin Core reference implementation of Bitcoin.

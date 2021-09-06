@@ -1,5 +1,5 @@
-Solidus Core
-=============
+Solidus Core 3.0.0
+=====================
 
 Intro
 -----

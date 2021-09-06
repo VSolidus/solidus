@@ -1,15 +1,17 @@
-// Copyright (c) 2011-2018 The Bitcoin Core developers
+// Copyright (c) 2011-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #ifndef BITCOIN_QT_RECENTREQUESTSTABLEMODEL_H
 #define BITCOIN_QT_RECENTREQUESTSTABLEMODEL_H
 
-#include <qt/walletmodel.h>
+#include "walletmodel.h"
 
 #include <QAbstractTableModel>
 #include <QStringList>
 #include <QDateTime>
+
+class CWallet;
 
 class RecentRequestEntry
 {
@@ -58,7 +60,7 @@ class RecentRequestsTableModel: public QAbstractTableModel
     Q_OBJECT
 
 public:
-    explicit RecentRequestsTableModel(WalletModel *parent);
+    explicit RecentRequestsTableModel(CWallet *wallet, WalletModel *parent);
     ~RecentRequestsTableModel();
 
     enum ColumnIndex {
@@ -94,7 +96,7 @@ private:
     WalletModel *walletModel;
     QStringList columns;
     QList<RecentRequestEntry> list;
-    int64_t nReceiveRequestsMaxId{0};
+    int64_t nReceiveRequestsMaxId;
 
     /** Updates the column title to "Amount (DisplayUnit)" and emits headerDataChanged() signal for table headers to react. */
     void updateAmountColumnTitle();

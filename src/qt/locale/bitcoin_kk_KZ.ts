@@ -74,6 +74,10 @@
         <translation>Биткоин</translation>
     </message>
     <message>
+        <source>Wallet</source>
+        <translation>Әмиян</translation>
+    </message>
+    <message>
         <source>&amp;Send</source>
         <translation>Жіберу</translation>
     </message>
@@ -165,10 +169,6 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Solidus</source>
-        <translation>Биткоин</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>қате</translation>
     </message>
@@ -184,10 +184,6 @@
     <message>
         <source>W&amp;allet</source>
         <translation>Әмиян</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>қате</translation>
     </message>
     </context>
 <context>
@@ -232,10 +228,6 @@
     </context>
 <context>
     <name>ReceiveRequestDialog</name>
-    <message>
-        <source>Wallet</source>
-        <translation>Әмиян</translation>
-    </message>
     </context>
 <context>
     <name>RecentRequestsTableModel</name>
@@ -295,9 +287,6 @@
     </context>
 <context>
     <name>UnitDisplayStatusBarControl</name>
-    </context>
-<context>
-    <name>WalletController</name>
     </context>
 <context>
     <name>WalletFrame</name>

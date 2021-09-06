@@ -21,13 +21,12 @@ Utility to generate the pnSeed[] array that is compiled into the client.
 Build Tools and Keys
 ---------------------
 
-### Packaging ###
-The [Debian](/contrib/debian) subfolder contains the copyright file.
-
-All other packaging related files can be found in the [bitcoin-core/packaging](https://github.com/bitcoin-core/packaging) repository.
+### [Debian](/contrib/debian) ###
+Contains files used to package solidusd/solidus-qt
+for Debian-based Linux systems. If you compile solidusd/solidus-qt yourself, there are some useful files here.
 
 ### [Gitian-descriptors](/contrib/gitian-descriptors) ###
-Files used during the gitian build process. For more information about gitian, see the [the Bitcoin Core documentation repository](https://github.com/bitcoin-core/docs).
+Notes on getting Gitian builds up and running using KVM.
 
 ### [Gitian-keys](/contrib/gitian-keys)
 PGP keys used for signing Solidus Core [Gitian release](/doc/release-process.md) results.
@@ -35,7 +34,10 @@ PGP keys used for signing Solidus Core [Gitian release](/doc/release-process.md)
 ### [MacDeploy](/contrib/macdeploy) ###
 Scripts and notes for Mac builds. 
 
-### [Gitian-build](/contrib/gitian-build.py) ###
+### [RPM](/contrib/rpm) ###
+RPM spec file for building solidus-core on RPM based distributions
+
+### [Gitian-build](/contrib/gitian-build.sh) ###
 Script for running full Gitian builds.
 
 Test and Verify Tools 
@@ -45,4 +47,4 @@ Test and Verify Tools
 Utilities to generate test vectors for the data-driven Solidus tests.
 
 ### [Verify Binaries](/contrib/verifybinaries) ###
-This script attempts to download and verify the signature file SHA256SUMS.asc from vsolidus.com.
+This script attempts to download and verify the signature file SHA256SUMS.asc from solidus.org.

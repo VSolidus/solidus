@@ -21,7 +21,7 @@ class TransactionDescDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit TransactionDescDialog(const QModelIndex &idx, QWidget *parent = nullptr);
+    explicit TransactionDescDialog(const QModelIndex &idx, QWidget *parent = 0);
     ~TransactionDescDialog();
 
 private:

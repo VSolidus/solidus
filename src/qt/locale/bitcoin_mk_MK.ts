@@ -78,6 +78,10 @@
         <translation>&amp;Преглед</translation>
     </message>
     <message>
+        <source>Node</source>
+        <translation>Јазол</translation>
+    </message>
+    <message>
         <source>&amp;Transactions</source>
         <translation>&amp;Трансакции</translation>
     </message>
@@ -118,6 +122,14 @@
         <translation>&amp;Измени Тајна Фраза...</translation>
     </message>
     <message>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;Адреси за Испраќање...</translation>
+    </message>
+    <message>
+        <source>&amp;Receiving addresses...</source>
+        <translation>&amp;Адреси за Примање...</translation>
+    </message>
+    <message>
         <source>Open &amp;URI...</source>
         <translation>Отвори &amp;URI...</translation>
     </message>
@@ -127,7 +139,7 @@
     </message>
     <message>
         <source>Send coins to a Solidus address</source>
-        <translation>Испрати лайткоини на Биткоин адреса</translation>
+        <translation>Испрати биткоини на Биткоин адреса</translation>
     </message>
     <message>
         <source>&amp;Verify message...</source>
@@ -136,6 +148,10 @@
     <message>
         <source>Solidus</source>
         <translation>Биткоин</translation>
+    </message>
+    <message>
+        <source>Wallet</source>
+        <translation>Паричник</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -180,10 +196,6 @@
     <message>
         <source>Up to date</source>
         <translation>Во тек</translation>
-    </message>
-    <message>
-        <source>&amp;Window</source>
-        <translation>&amp;Прозорец</translation>
     </message>
     <message>
         <source>Date: %1
@@ -287,10 +299,6 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Solidus</source>
-        <translation>Биткоин</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Грешка</translation>
     </message>
@@ -316,6 +324,10 @@
         <translation>Опции</translation>
     </message>
     <message>
+        <source>MB</source>
+        <translation>МБ</translation>
+    </message>
+    <message>
         <source>&amp;Network</source>
         <translation>&amp;Мрежа</translation>
     </message>
@@ -339,10 +351,6 @@
         <source>none</source>
         <translation>нема</translation>
     </message>
-    <message>
-        <source>Error</source>
-        <translation>Грешка</translation>
-    </message>
     </context>
 <context>
     <name>OverviewPage</name>
@@ -356,10 +364,6 @@
     </context>
 <context>
     <name>PeerTableModel</name>
-    <message>
-        <source>Sent</source>
-        <translation>Испратени</translation>
-    </message>
     </context>
 <context>
     <name>QObject</name>
@@ -390,22 +394,6 @@
     <message>
         <source>%1 and %2</source>
         <translation>%1 и %2</translation>
-    </message>
-    <message>
-        <source>%1 B</source>
-        <translation>%1 Б</translation>
-    </message>
-    <message>
-        <source>%1 KB</source>
-        <translation>%1 КБ</translation>
-    </message>
-    <message>
-        <source>%1 MB</source>
-        <translation>%1 МБ</translation>
-    </message>
-    <message>
-        <source>%1 GB</source>
-        <translation>%1 ГБ</translation>
     </message>
     </context>
 <context>
@@ -444,6 +432,22 @@
         <source>&amp;Console</source>
         <translation>&amp;Конзола</translation>
     </message>
+    <message>
+        <source>%1 B</source>
+        <translation>%1 Б</translation>
+    </message>
+    <message>
+        <source>%1 KB</source>
+        <translation>%1 КБ</translation>
+    </message>
+    <message>
+        <source>%1 MB</source>
+        <translation>%1 МБ</translation>
+    </message>
+    <message>
+        <source>%1 GB</source>
+        <translation>%1 ГБ</translation>
+    </message>
     </context>
 <context>
     <name>ReceiveCoinsDialog</name>
@@ -481,10 +485,6 @@
     <message>
         <source>&amp;Save Image...</source>
         <translation>&amp;Сними Слика...</translation>
-    </message>
-    <message>
-        <source>Wallet</source>
-        <translation>Паричник</translation>
     </message>
     </context>
 <context>
@@ -563,9 +563,6 @@
     <name>UnitDisplayStatusBarControl</name>
     </context>
 <context>
-    <name>WalletController</name>
-    </context>
-<context>
     <name>WalletFrame</name>
     </context>
 <context>
@@ -576,6 +573,10 @@
     </context>
 <context>
     <name>bitcoin-core</name>
+    <message>
+        <source>Options:</source>
+        <translation>Опции:</translation>
+    </message>
     <message>
         <source>Solidus Core</source>
         <translation>Биткоин Core</translation>

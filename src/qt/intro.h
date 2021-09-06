@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2018 The Bitcoin Core developers
+// Copyright (c) 2011-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,10 +13,6 @@ static const bool DEFAULT_CHOOSE_DATADIR = false;
 
 class FreespaceChecker;
 
-namespace interfaces {
-    class Node;
-}
-
 namespace Ui {
     class Intro;
 }
@@ -30,8 +26,7 @@ class Intro : public QDialog
     Q_OBJECT
 
 public:
-    explicit Intro(QWidget *parent = nullptr,
-                   uint64_t blockchain_size = 0, uint64_t chain_state_size = 0);
+    explicit Intro(QWidget *parent = 0);
     ~Intro();
 
     QString getDataDirectory();
@@ -46,7 +41,7 @@ public:
      * @note do NOT call global GetDataDir() before calling this function, this
      * will cause the wrong path to be cached.
      */
-    static bool pickDataDirectory(interfaces::Node& node);
+    static bool pickDataDirectory();
 
     /**
      * Determine default data directory for operating system.
@@ -55,6 +50,7 @@ public:
 
 Q_SIGNALS:
     void requestCheck();
+    void stopThread();
 
 public Q_SLOTS:
     void setStatus(int status, const QString &message, quint64 bytesAvailable);
@@ -71,8 +67,6 @@ private:
     QMutex mutex;
     bool signalled;
     QString pathToCheck;
-    uint64_t m_blockchain_size;
-    uint64_t m_chain_state_size;
 
     void startThread();
     void checkPath(const QString &dataDir);

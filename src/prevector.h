@@ -1,19 +1,16 @@
-// Copyright (c) 2015-2018 The Bitcoin Core developers
+// Copyright (c) 2015-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_PREVECTOR_H
-#define BITCOIN_PREVECTOR_H
+#ifndef _BITCOIN_PREVECTOR_H_
+#define _BITCOIN_PREVECTOR_H_
 
 #include <assert.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
 
-#include <algorithm>
-#include <cstddef>
 #include <iterator>
-#include <type_traits>
 
 #pragma pack(push, 1)
 /** Implements a drop-in replacement for std::vector<T> which stores up to N
@@ -134,7 +131,7 @@ public:
         typedef const T* pointer;
         typedef const T& reference;
         typedef std::bidirectional_iterator_tag iterator_category;
-        const_reverse_iterator(const T* ptr_) : ptr(ptr_) {}
+        const_reverse_iterator(T* ptr_) : ptr(ptr_) {}
         const_reverse_iterator(reverse_iterator x) : ptr(&(*x)) {}
         const T& operator*() const { return *ptr; }
         const T* operator->() const { return ptr; }
@@ -196,27 +193,16 @@ private:
     T* item_ptr(difference_type pos) { return is_direct() ? direct_ptr(pos) : indirect_ptr(pos); }
     const T* item_ptr(difference_type pos) const { return is_direct() ? direct_ptr(pos) : indirect_ptr(pos); }
 
-    void fill(T* dst, ptrdiff_t count, const T& value = T{}) {
-        std::fill_n(dst, count, value);
-    }
-
-    template<typename InputIterator>
-    void fill(T* dst, InputIterator first, InputIterator last) {
-        while (first != last) {
-            new(static_cast<void*>(dst)) T(*first);
-            ++dst;
-            ++first;
-        }
-    }
-
 public:
     void assign(size_type n, const T& val) {
         clear();
         if (capacity() < n) {
             change_capacity(n);
         }
-        _size += n;
-        fill(item_ptr(0), n, val);
+        while (size() < n) {
+            _size++;
+            new(static_cast<void*>(item_ptr(size() - 1))) T(val);
+        }
     }
 
     template<typename InputIterator>
@@ -226,38 +212,49 @@ public:
         if (capacity() < n) {
             change_capacity(n);
         }
-        _size += n;
-        fill(item_ptr(0), first, last);
+        while (first != last) {
+            _size++;
+            new(static_cast<void*>(item_ptr(size() - 1))) T(*first);
+            ++first;
+        }
     }
 
-    prevector() : _size(0), _union{{}} {}
+    prevector() : _size(0) {}
 
-    explicit prevector(size_type n) : prevector() {
+    explicit prevector(size_type n) : _size(0) {
         resize(n);
     }
 
-    explicit prevector(size_type n, const T& val) : prevector() {
+    explicit prevector(size_type n, const T& val = T()) : _size(0) {
         change_capacity(n);
-        _size += n;
-        fill(item_ptr(0), n, val);
+        while (size() < n) {
+            _size++;
+            new(static_cast<void*>(item_ptr(size() - 1))) T(val);
+        }
     }
 
     template<typename InputIterator>
-    prevector(InputIterator first, InputIterator last) : prevector() {
+    prevector(InputIterator first, InputIterator last) : _size(0) {
         size_type n = last - first;
         change_capacity(n);
-        _size += n;
-        fill(item_ptr(0), first, last);
+        while (first != last) {
+            _size++;
+            new(static_cast<void*>(item_ptr(size() - 1))) T(*first);
+            ++first;
+        }
     }
 
-    prevector(const prevector<N, T, Size, Diff>& other) : prevector() {
-        size_type n = other.size();
-        change_capacity(n);
-        _size += n;
-        fill(item_ptr(0), other.begin(),  other.end());
+    prevector(const prevector<N, T, Size, Diff>& other) : _size(0) {
+        change_capacity(other.size());
+        const_iterator it = other.begin();
+        while (it != other.end()) {
+            _size++;
+            new(static_cast<void*>(item_ptr(size() - 1))) T(*it);
+            ++it;
+        }
     }
 
-    prevector(prevector<N, T, Size, Diff>&& other) : prevector() {
+    prevector(prevector<N, T, Size, Diff>&& other) : _size(0) {
         swap(other);
     }
 
@@ -265,7 +262,14 @@ public:
         if (&other == this) {
             return *this;
         }
-        assign(other.begin(), other.end());
+        resize(0);
+        change_capacity(other.size());
+        const_iterator it = other.begin();
+        while (it != other.end()) {
+            _size++;
+            new(static_cast<void*>(item_ptr(size() - 1))) T(*it);
+            ++it;
+        }
         return *this;
     }
 
@@ -309,20 +313,16 @@ public:
     }
 
     void resize(size_type new_size) {
-        size_type cur_size = size();
-        if (cur_size == new_size) {
-            return;
-        }
-        if (cur_size > new_size) {
+        if (size() > new_size) {
             erase(item_ptr(new_size), end());
-            return;
         }
         if (new_size > capacity()) {
             change_capacity(new_size);
         }
-        ptrdiff_t increase = new_size - cur_size;
-        fill(item_ptr(cur_size), increase);
-        _size += increase;
+        while (size() < new_size) {
+            _size++;
+            new(static_cast<void*>(item_ptr(size() - 1))) T();
+        }
     }
 
     void reserve(size_type new_capacity) {
@@ -345,11 +345,10 @@ public:
         if (capacity() < new_size) {
             change_capacity(new_size + (new_size >> 1));
         }
-        T* ptr = item_ptr(p);
-        memmove(ptr + 1, ptr, (size() - p) * sizeof(T));
+        memmove(item_ptr(p + 1), item_ptr(p), (size() - p) * sizeof(T));
         _size++;
-        new(static_cast<void*>(ptr)) T(value);
-        return iterator(ptr);
+        new(static_cast<void*>(item_ptr(p))) T(value);
+        return iterator(item_ptr(p));
     }
 
     void insert(iterator pos, size_type count, const T& value) {
@@ -358,10 +357,11 @@ public:
         if (capacity() < new_size) {
             change_capacity(new_size + (new_size >> 1));
         }
-        T* ptr = item_ptr(p);
-        memmove(ptr + count, ptr, (size() - p) * sizeof(T));
+        memmove(item_ptr(p + count), item_ptr(p), (size() - p) * sizeof(T));
         _size += count;
-        fill(item_ptr(p), count, value);
+        for (size_type i = 0; i < count; i++) {
+            new(static_cast<void*>(item_ptr(p + i))) T(value);
+        }
     }
 
     template<typename InputIterator>
@@ -372,10 +372,13 @@ public:
         if (capacity() < new_size) {
             change_capacity(new_size + (new_size >> 1));
         }
-        T* ptr = item_ptr(p);
-        memmove(ptr + count, ptr, (size() - p) * sizeof(T));
+        memmove(item_ptr(p + count), item_ptr(p), (size() - p) * sizeof(T));
         _size += count;
-        fill(ptr, first, last);
+        while (first != last) {
+            new(static_cast<void*>(item_ptr(p))) T(*first);
+            ++p;
+            ++first;
+        }
     }
 
     iterator erase(iterator pos) {
@@ -383,22 +386,12 @@ public:
     }
 
     iterator erase(iterator first, iterator last) {
-        // Erase is not allowed to the change the object's capacity. That means
-        // that when starting with an indirectly allocated prevector with
-        // size and capacity > N, the result may be a still indirectly allocated
-        // prevector with size <= N and capacity > N. A shrink_to_fit() call is
-        // necessary to switch to the (more efficient) directly allocated
-        // representation (with capacity N and size <= N).
         iterator p = first;
         char* endp = (char*)&(*end());
-        if (!std::is_trivially_destructible<T>::value) {
-            while (p != last) {
-                (*p).~T();
-                _size--;
-                ++p;
-            }
-        } else {
-            _size -= last - p;
+        while (p != last) {
+            (*p).~T();
+            _size--;
+            ++p;
         }
         memmove(&(*first), &(*last), endp - ((char*)(&(*last))));
         return first;
@@ -439,12 +432,10 @@ public:
     }
 
     ~prevector() {
-        if (!std::is_trivially_destructible<T>::value) {
-            clear();
-        }
+        clear();
         if (!is_direct()) {
             free(_union.indirect);
-            _union.indirect = nullptr;
+            _union.indirect = NULL;
         }
     }
 
@@ -510,4 +501,4 @@ public:
 };
 #pragma pack(pop)
 
-#endif // BITCOIN_PREVECTOR_H
+#endif

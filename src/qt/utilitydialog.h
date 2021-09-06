@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2018 The Bitcoin Core developers
+// Copyright (c) 2011-2021 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -9,10 +9,7 @@
 #include <QObject>
 
 class BitcoinGUI;
-
-namespace interfaces {
-    class Node;
-}
+class ClientModel;
 
 namespace Ui {
     class HelpMessageDialog;
@@ -24,7 +21,7 @@ class HelpMessageDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit HelpMessageDialog(interfaces::Node& node, QWidget *parent, bool about);
+    explicit HelpMessageDialog(QWidget *parent, bool about);
     ~HelpMessageDialog();
 
     void printToConsole();
@@ -45,7 +42,7 @@ class ShutdownWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit ShutdownWindow(QWidget *parent=nullptr, Qt::WindowFlags f=Qt::Widget);
+    ShutdownWindow(QWidget *parent=0, Qt::WindowFlags f=0);
     static QWidget *showShutdownWindow(BitcoinGUI *window);
 
 protected:

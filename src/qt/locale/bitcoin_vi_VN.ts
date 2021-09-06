@@ -11,7 +11,7 @@
     </message>
     <message>
         <source>&amp;New</source>
-        <translation>&amp;Tạo mới</translation>
+        <translation>&amp;Mới</translation>
     </message>
     <message>
         <source>Copy the currently selected address to the system clipboard</source>
@@ -35,11 +35,11 @@
     </message>
     <message>
         <source>&amp;Export</source>
-        <translation>&amp;Xuất</translation>
+        <translation>X&amp;uất</translation>
     </message>
     <message>
         <source>&amp;Delete</source>
-        <translation>&amp;Xóa</translation>
+        <translation>&amp;Xó&amp;a</translation>
     </message>
     <message>
         <source>Choose the address to send coins to</source>
@@ -61,54 +61,10 @@
         <source>Receiving addresses</source>
         <translation>Địa chỉ nhận</translation>
     </message>
-    <message>
-        <source>These are your Solidus addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Đây là các địa chỉ Solidus để gửi bạn gửi tiền. Trước khi gửi bạn nên kiểm tra lại số tiền bạn muốn gửi và địa chỉ solidus của người nhận.</translation>
-    </message>
-    <message>
-        <source>These are your Solidus addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Đây là các địa chỉ Solidus để bạn nhận tiền. Với mỗi giao dịch, bạn nên dùng một địa chỉ Solidus mới để nhận tiền.</translation>
-    </message>
-    <message>
-        <source>&amp;Copy Address</source>
-        <translation>&amp;Chép Địa chỉ</translation>
-    </message>
-    <message>
-        <source>Copy &amp;Label</source>
-        <translation>Chép &amp;Nhãn</translation>
-    </message>
-    <message>
-        <source>&amp;Edit</source>
-        <translation>&amp;Sửa</translation>
-    </message>
-    <message>
-        <source>Export Address List</source>
-        <translation>Xuất Danh Sách Địa Chỉ</translation>
-    </message>
-    <message>
-        <source>Comma separated file (*.csv)</source>
-        <translation>Các tệp tác nhau bằng đấu phẩy (* .csv)</translation>
-    </message>
-    <message>
-        <source>Exporting Failed</source>
-        <translation>Xuất không thành công</translation>
-    </message>
     </context>
 <context>
     <name>AddressTableModel</name>
-    <message>
-        <source>Label</source>
-        <translation>Nhãn</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Địa chỉ</translation>
-    </message>
-    <message>
-        <source>(no label)</source>
-        <translation>(không nhãn)</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>AskPassphraseDialog</name>
     <message>
@@ -127,92 +83,7 @@
         <source>Repeat new passphrase</source>
         <translation>Điền lại passphrase</translation>
     </message>
-    <message>
-        <source>Show password</source>
-        <translation>Hiện mật khẩu</translation>
-    </message>
-    <message>
-        <source>Enter the new passphrase to the wallet.&lt;br/&gt;Please use a passphrase of &lt;b&gt;ten or more random characters&lt;/b&gt;, or &lt;b&gt;eight or more words&lt;/b&gt;.</source>
-        <translation>Nhập passphrase mới cho Ví của bạn.&lt;br/&gt;Vui long dùng  passphrase gồm&lt;b&gt;ít nhất 10 ký tự bất kỳ &lt;/b&gt;, hoặc &lt;b&gt;ít nhất 8 chữ&lt;/b&gt;.</translation>
-    </message>
-    <message>
-        <source>Encrypt wallet</source>
-        <translation>Mã hóa ví</translation>
-    </message>
-    <message>
-        <source>This operation needs your wallet passphrase to unlock the wallet.</source>
-        <translation>Thao tác này cần cụm từ mật khẩu để mở khóa ví.</translation>
-    </message>
-    <message>
-        <source>Unlock wallet</source>
-        <translation>Mở khóa ví</translation>
-    </message>
-    <message>
-        <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
-        <translation>Thao tác này cần cụm mật khẩu ví của bạn để giải mã ví.</translation>
-    </message>
-    <message>
-        <source>Decrypt wallet</source>
-        <translation>Giải mã ví</translation>
-    </message>
-    <message>
-        <source>Change passphrase</source>
-        <translation>Đổi cụm mật khẩu</translation>
-    </message>
-    <message>
-        <source>Enter the old passphrase and new passphrase to the wallet.</source>
-        <translation>Nhập cụm từ mật khẩu cũ và cụm mật khẩu mới vào ví.</translation>
-    </message>
-    <message>
-        <source>Confirm wallet encryption</source>
-        <translation>Xác nhận mã hóa ví</translation>
-    </message>
-    <message>
-        <source>Are you sure you wish to encrypt your wallet?</source>
-        <translation>Bạn có chắc chắn muốn mã hóa ví của bạn?</translation>
-    </message>
-    <message>
-        <source>Wallet encrypted</source>
-        <translation>Ví đã được mã hóa</translation>
-    </message>
-    <message>
-        <source>IMPORTANT: Any previous backups you have made of your wallet file should be replaced with the newly generated, encrypted wallet file. For security reasons, previous backups of the unencrypted wallet file will become useless as soon as you start using the new, encrypted wallet.</source>
-        <translation>QUAN TRỌNG: Bất kỳ bản sao lưu trước nào bạn đã làm từ tệp ví tiền của bạn phải được thay thế bằng tệp ví tiền mới được tạo và mã hóa. Vì lý do bảo mật, các bản sao lưu trước đó của tệp ví tiền không được mã hóa sẽ trở nên vô dụng ngay khi bạn bắt đầu sử dụng ví đã được mã hóa.</translation>
-    </message>
-    <message>
-        <source>Wallet encryption failed</source>
-        <translation>Mã hóa ví không thành công</translation>
-    </message>
-    <message>
-        <source>Wallet encryption failed due to an internal error. Your wallet was not encrypted.</source>
-        <translation>Mã hóa ví không thành công do có lỗi bên trong.
-Ví của bạn chưa được mã hóa.</translation>
-    </message>
-    <message>
-        <source>The supplied passphrases do not match.</source>
-        <translation>Cụm mật khẩu được cung cấp không khớp.</translation>
-    </message>
-    <message>
-        <source>Wallet unlock failed</source>
-        <translation>Mở khóa ví không thành công</translation>
-    </message>
-    <message>
-        <source>The passphrase entered for the wallet decryption was incorrect.</source>
-        <translation>Cụm từ mật mã nhập vào không đúng</translation>
-    </message>
-    <message>
-        <source>Wallet decryption failed</source>
-        <translation>Giải mã ví không thành công</translation>
-    </message>
-    <message>
-        <source>Wallet passphrase was successfully changed.</source>
-        <translation>Cụm từ mật khẩu mã hóa của ví đã được thay đổi.</translation>
-    </message>
-    <message>
-        <source>Warning: The Caps Lock key is on!</source>
-        <translation>Chú ý: Caps Lock đang được bật!</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>BanTableModel</name>
     <message>
@@ -237,6 +108,10 @@ Ví của bạn chưa được mã hóa.</translation>
     <message>
         <source>&amp;Overview</source>
         <translation>&amp;Tổng quan</translation>
+    </message>
+    <message>
+        <source>Node</source>
+        <translation>Node</translation>
     </message>
     <message>
         <source>Show general overview of wallet</source>
@@ -295,24 +170,16 @@ Ví của bạn chưa được mã hóa.</translation>
         <translation>&amp;Thay đổi mật khẩu...</translation>
     </message>
     <message>
+        <source>&amp;Sending addresses...</source>
+        <translation>&amp;Địa chỉ gửi</translation>
+    </message>
+    <message>
+        <source>&amp;Receiving addresses...</source>
+        <translation>Địa chỉ nhận</translation>
+    </message>
+    <message>
         <source>Open &amp;URI...</source>
         <translation>Mở &amp;URI...</translation>
-    </message>
-    <message>
-        <source>Click to disable network activity.</source>
-        <translation>Nhấp để vô hiệu hóa kết nối mạng.</translation>
-    </message>
-    <message>
-        <source>Network activity disabled.</source>
-        <translation>Kết nối mạng đã bị ngắt</translation>
-    </message>
-    <message>
-        <source>Click to enable network activity again.</source>
-        <translation>Nhấp để kết nối lại mạng.</translation>
-    </message>
-    <message>
-        <source>Syncing Headers (%1%)...</source>
-        <translation>Đồng bộ hóa các Headers (%1%)...</translation>
     </message>
     <message>
         <source>Reindexing blocks on disk...</source>
@@ -335,16 +202,16 @@ Ví của bạn chưa được mã hóa.</translation>
         <translation>&amp;Cửa sổ xử lý lỗi (debug)</translation>
     </message>
     <message>
-        <source>Open debugging and diagnostic console</source>
-        <translation>Mở trình gỡ lỗi và bảng lệnh chuẩn đoán</translation>
-    </message>
-    <message>
         <source>&amp;Verify message...</source>
         <translation>&amp;Tin nhắn xác thực</translation>
     </message>
     <message>
         <source>Solidus</source>
         <translation>Solidus</translation>
+    </message>
+    <message>
+        <source>Wallet</source>
+        <translation>Ví</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -410,22 +277,6 @@ Ví của bạn chưa được mã hóa.</translation>
         <source>&amp;Command-line options</source>
         <translation>7Tùy chọn dòng lệnh</translation>
     </message>
-    <message numerus="yes">
-        <source>%n active connection(s) to Solidus network</source>
-        <translation><numerusform>%n liên kết hoạt động với mạng lưới Solidus</numerusform></translation>
-    </message>
-    <message>
-        <source>Indexing blocks on disk...</source>
-        <translation>Đang lập chỉ mục các khối trên ổ đĩa</translation>
-    </message>
-    <message>
-        <source>Processing blocks on disk...</source>
-        <translation>Đang xử lý các khối trên ổ đĩa...</translation>
-    </message>
-    <message numerus="yes">
-        <source>Processed %n block(s) of transaction history.</source>
-        <translation><numerusform>Đã xử lý %n khối của lịch sử giao dịch.</numerusform></translation>
-    </message>
     <message>
         <source>%1 behind</source>
         <translation>%1 chậm trễ</translation>
@@ -453,14 +304,6 @@ Ví của bạn chưa được mã hóa.</translation>
     <message>
         <source>Up to date</source>
         <translation>Đã cập nhật</translation>
-    </message>
-    <message>
-        <source>Show the %1 help message to get a list with possible Solidus command-line options</source>
-        <translation>Hiển thị tin nhắn trợ giúp %1 để có được danh sách với các tùy chọn dòng lệnh Solidus.</translation>
-    </message>
-    <message>
-        <source>Connecting to peers...</source>
-        <translation>Kết nối với các máy ngang hàng...</translation>
     </message>
     <message>
         <source>Catching up...</source>
@@ -567,10 +410,6 @@ Ví của bạn chưa được mã hóa.</translation>
         <source>Confirmed</source>
         <translation>Đã xác nhận</translation>
     </message>
-    <message>
-        <source>(no label)</source>
-        <translation>(không nhãn)</translation>
-    </message>
     </context>
 <context>
     <name>EditAddressDialog</name>
@@ -608,7 +447,23 @@ Ví của bạn chưa được mã hóa.</translation>
         <source>Command-line options</source>
         <translation>&amp;Tùy chọn dòng lệnh</translation>
     </message>
-</context>
+    <message>
+        <source>Usage:</source>
+        <translation>Mức sử dụng</translation>
+    </message>
+    <message>
+        <source>command-line options</source>
+        <translation>tùy chọn dòng lệnh</translation>
+    </message>
+    <message>
+        <source>Set language, for example "de_DE" (default: system locale)</source>
+        <translation>Chọn ngôn ngữ, ví dụ "de_DE" (mặc định: Vị trí hệ thống)</translation>
+    </message>
+    <message>
+        <source>Set SSL root certificates for payment request (default: -system-)</source>
+        <translation>Đặt chứng nhận SSL gốc cho yêu cầu giao dịch (mặc định: -hệ thống-)</translation>
+    </message>
+    </context>
 <context>
     <name>Intro</name>
     <message>
@@ -618,10 +473,6 @@ Ví của bạn chưa được mã hóa.</translation>
     <message>
         <source>Use the default data directory</source>
         <translation>Sử dụng vị trí dữ liệu mặc định</translation>
-    </message>
-    <message>
-        <source>Solidus</source>
-        <translation>Solidus</translation>
     </message>
     <message>
         <source>Error</source>
@@ -661,8 +512,24 @@ Ví của bạn chưa được mã hóa.</translation>
         <translation>&amp;Chính</translation>
     </message>
     <message>
+        <source>MB</source>
+        <translation>MB</translation>
+    </message>
+    <message>
+        <source>Accept connections from outside</source>
+        <translation>Chấp nhận các kết nối từ bên ngoài</translation>
+    </message>
+    <message>
+        <source>Allow incoming connections</source>
+        <translation>Cho phép nhận kết nối</translation>
+    </message>
+    <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>Địa chỉ IP của proxy (ví dụ IPv4: 127.0.0.1 / IPv6: ::1)</translation>
+    </message>
+    <message>
+        <source>Third party transaction URLs</source>
+        <translation>Phần mềm giao dịch bên thứ ba URLs</translation>
     </message>
     <message>
         <source>W&amp;allet</source>
@@ -716,10 +583,6 @@ Ví của bạn chưa được mã hóa.</translation>
         <source>none</source>
         <translation>Trống</translation>
     </message>
-    <message>
-        <source>Error</source>
-        <translation>Lỗi</translation>
-    </message>
     </context>
 <context>
     <name>OverviewPage</name>
@@ -749,10 +612,6 @@ Ví của bạn chưa được mã hóa.</translation>
         <source>User Agent</source>
         <translation>User Agent</translation>
     </message>
-    <message>
-        <source>Sent</source>
-        <translation>Đã gửi</translation>
-    </message>
     </context>
 <context>
     <name>QObject</name>
@@ -763,22 +622,6 @@ Ví của bạn chưa được mã hóa.</translation>
     <message>
         <source>%1 and %2</source>
         <translation>%1 và %2</translation>
-    </message>
-    <message>
-        <source>%1 B</source>
-        <translation>%1 B</translation>
-    </message>
-    <message>
-        <source>%1 KB</source>
-        <translation>%1 KB</translation>
-    </message>
-    <message>
-        <source>%1 MB</source>
-        <translation>%1 MB</translation>
-    </message>
-    <message>
-        <source>%1 GB</source>
-        <translation>%1 GB</translation>
     </message>
     </context>
 <context>
@@ -832,6 +675,30 @@ Ví của bạn chưa được mã hóa.</translation>
     <message>
         <source>1 &amp;year</source>
         <translation>1&amp;năm</translation>
+    </message>
+    <message>
+        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
+        <translation>Sử dụng phím lên và xuống để di chuyển lịch sử, và &lt;b&gt;Ctrl-L&lt;/b&gt; để xóa màn hình</translation>
+    </message>
+    <message>
+        <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
+        <translation>Gõ &lt;b&gt;help&lt;/b&gt; để xem nhưng câu lệnh có sẵn</translation>
+    </message>
+    <message>
+        <source>%1 B</source>
+        <translation>%1 B</translation>
+    </message>
+    <message>
+        <source>%1 KB</source>
+        <translation>%1 KB</translation>
+    </message>
+    <message>
+        <source>%1 MB</source>
+        <translation>%1 MB</translation>
+    </message>
+    <message>
+        <source>%1 GB</source>
+        <translation>%1 GB</translation>
     </message>
     <message>
         <source>never</source>
@@ -928,24 +795,12 @@ Ví của bạn chưa được mã hóa.</translation>
         <translation>URI</translation>
     </message>
     <message>
-        <source>Address</source>
-        <translation>Địa chỉ</translation>
-    </message>
-    <message>
         <source>Amount</source>
         <translation>Lượng</translation>
     </message>
     <message>
-        <source>Label</source>
-        <translation>Nhãn</translation>
-    </message>
-    <message>
         <source>Message</source>
         <translation>Tin nhắn</translation>
-    </message>
-    <message>
-        <source>Wallet</source>
-        <translation>Ví</translation>
     </message>
     <message>
         <source>Error encoding URI into QR Code.</source>
@@ -955,16 +810,8 @@ Ví của bạn chưa được mã hóa.</translation>
 <context>
     <name>RecentRequestsTableModel</name>
     <message>
-        <source>Label</source>
-        <translation>Nhãn</translation>
-    </message>
-    <message>
         <source>Message</source>
         <translation>Tin nhắn</translation>
-    </message>
-    <message>
-        <source>(no label)</source>
-        <translation>(không nhãn)</translation>
     </message>
     <message>
         <source>(no message)</source>
@@ -1038,6 +885,22 @@ Ví của bạn chưa được mã hóa.</translation>
         <translation>Ẩn</translation>
     </message>
     <message>
+        <source>total at least</source>
+        <translation>Tổng cộng ít nhất</translation>
+    </message>
+    <message>
+        <source>(read the tooltip)</source>
+        <translation>(Đọc hướng dẫn)</translation>
+    </message>
+    <message>
+        <source>normal</source>
+        <translation>Bình thường</translation>
+    </message>
+    <message>
+        <source>fast</source>
+        <translation>Nhanh</translation>
+    </message>
+    <message>
         <source>Send to multiple recipients at once</source>
         <translation>Gửi đến nhiều người nhận trong một lần</translation>
     </message>
@@ -1066,6 +929,10 @@ Ví của bạn chưa được mã hóa.</translation>
         <translation>%1 đến %2</translation>
     </message>
     <message>
+        <source>Total Amount %1</source>
+        <translation>Tổng cộng %1</translation>
+    </message>
+    <message>
         <source>or</source>
         <translation>hoặc</translation>
     </message>
@@ -1073,11 +940,7 @@ Ví của bạn chưa được mã hóa.</translation>
         <source>Confirm send coins</source>
         <translation>Xác nhận gửi coins</translation>
     </message>
-    <message>
-        <source>(no label)</source>
-        <translation>(không nhãn)</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>SendCoinsEntry</name>
     <message>
@@ -1128,39 +991,12 @@ Ví của bạn chưa được mã hóa.</translation>
     </context>
 <context>
     <name>TransactionTableModel</name>
-    <message>
-        <source>Label</source>
-        <translation>Nhãn</translation>
-    </message>
-    <message>
-        <source>(no label)</source>
-        <translation>(không nhãn)</translation>
-    </message>
     </context>
 <context>
     <name>TransactionView</name>
-    <message>
-        <source>Comma separated file (*.csv)</source>
-        <translation>Các tệp tác nhau bằng đấu phẩy (* .csv)</translation>
-    </message>
-    <message>
-        <source>Label</source>
-        <translation>Nhãn</translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation>Địa chỉ</translation>
-    </message>
-    <message>
-        <source>Exporting Failed</source>
-        <translation>Xuất không thành công</translation>
-    </message>
     </context>
 <context>
     <name>UnitDisplayStatusBarControl</name>
-    </context>
-<context>
-    <name>WalletController</name>
     </context>
 <context>
     <name>WalletFrame</name>
@@ -1171,19 +1007,23 @@ Ví của bạn chưa được mã hóa.</translation>
         <source>Send Coins</source>
         <translation>Gửi Coins</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>WalletView</name>
-    <message>
-        <source>&amp;Export</source>
-        <translation>&amp;Xuất</translation>
-    </message>
     </context>
 <context>
     <name>bitcoin-core</name>
     <message>
+        <source>Options:</source>
+        <translation>Lựa chọn:</translation>
+    </message>
+    <message>
         <source>Solidus Core</source>
         <translation>Solidus Core</translation>
+    </message>
+    <message>
+        <source>(default: %u)</source>
+        <translation>(mặc định: %u)</translation>
     </message>
     <message>
         <source>Information</source>
@@ -1196,6 +1036,14 @@ Ví của bạn chưa được mã hóa.</translation>
     <message>
         <source>Warning</source>
         <translation>Chú ý</translation>
+    </message>
+    <message>
+        <source>Loading addresses...</source>
+        <translation>Đang đọc các địa chỉ...</translation>
+    </message>
+    <message>
+        <source>(default: %s)</source>
+        <translation>(mặc định: %s)</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -1212,6 +1060,10 @@ Ví của bạn chưa được mã hóa.</translation>
     <message>
         <source>Cannot downgrade wallet</source>
         <translation>Không downgrade được ví</translation>
+    </message>
+    <message>
+        <source>Cannot write default address</source>
+        <translation>Không ghi được địa chỉ mặc định</translation>
     </message>
     <message>
         <source>Rescanning...</source>

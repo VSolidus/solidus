@@ -38,14 +38,6 @@
         <translation>Zgjidh adresen ku do te dergoni monedhat</translation>
     </message>
     <message>
-        <source>Choose the address to receive coins with</source>
-        <translation>Zgjidh adresën ku do të merrni monedhat</translation>
-    </message>
-    <message>
-        <source>C&amp;hoose</source>
-        <translation>Zgjidh</translation>
-    </message>
-    <message>
         <source>Sending addresses</source>
         <translation>Duke derguar adresen</translation>
     </message>
@@ -109,19 +101,15 @@
     <name>AskPassphraseDialog</name>
     <message>
         <source>Enter passphrase</source>
-        <translation>Futni fjalëkalimin</translation>
+        <translation>Futni frazkalimin</translation>
     </message>
     <message>
         <source>New passphrase</source>
-        <translation>Fjalëkalimi i ri</translation>
+        <translation>Frazkalim i ri</translation>
     </message>
     <message>
         <source>Repeat new passphrase</source>
-        <translation>Përsërisni fjalëkalimin e ri</translation>
-    </message>
-    <message>
-        <source>Show password</source>
-        <translation>Trego fjalëkalimin</translation>
+        <translation>Përsërisni frazkalimin e ri</translation>
     </message>
     <message>
         <source>Encrypt wallet</source>
@@ -129,11 +117,11 @@
     </message>
     <message>
         <source>This operation needs your wallet passphrase to unlock the wallet.</source>
-        <translation>Ky veprim ka nevojë per fjalëkalimin e portofolit tuaj që të hapë portofolin.</translation>
+        <translation>Ky veprim ka nevojë per frazkalimin e portofolit tuaj që të ç'kyç portofolin.</translation>
     </message>
     <message>
         <source>Unlock wallet</source>
-        <translation>Hap portofolin.</translation>
+        <translation>ç'kyç portofolin.</translation>
     </message>
     <message>
         <source>This operation needs your wallet passphrase to decrypt the wallet.</source>
@@ -145,11 +133,7 @@
     </message>
     <message>
         <source>Change passphrase</source>
-        <translation>Ndrysho fjalëkalimin</translation>
-    </message>
-    <message>
-        <source>Enter the old passphrase and new passphrase to the wallet.</source>
-        <translation>Fusni fjalëkalimin e vjetër dhe fjalëkalimin e ri që të hapni portofolin.</translation>
+        <translation>Ndrysho frazkalimin</translation>
     </message>
     <message>
         <source>Confirm wallet encryption</source>
@@ -222,12 +206,20 @@
         <translation>&amp;Opsione</translation>
     </message>
     <message>
+        <source>&amp;Receiving addresses...</source>
+        <translation>Duke marr adresen</translation>
+    </message>
+    <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Ndrysho frazkalimin e përdorur per enkriptimin e portofolit</translation>
     </message>
     <message>
         <source>Solidus</source>
         <translation>Solidus</translation>
+    </message>
+    <message>
+        <source>Wallet</source>
+        <translation>Portofol</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -344,6 +336,10 @@
         <translation>&amp;Adresa</translation>
     </message>
     <message>
+        <source>New receiving address</source>
+        <translation>Adresë e re pritëse</translation>
+    </message>
+    <message>
         <source>New sending address</source>
         <translation>Adresë e re dërgimi</translation>
     </message>
@@ -354,6 +350,10 @@
     <message>
         <source>Edit sending address</source>
         <translation>ndrysho adresën dërguese</translation>
+    </message>
+    <message>
+        <source>The entered address "%1" is already in the address book.</source>
+        <translation>Adresa e dhënë "%1" është e zënë në librin e adresave. </translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -385,10 +385,6 @@
         <translation>Miresevini</translation>
     </message>
     <message>
-        <source>Solidus</source>
-        <translation>Solidus</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Problem</translation>
     </message>
@@ -412,10 +408,6 @@
     <message>
         <source>W&amp;allet</source>
         <translation>Portofol</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Problem</translation>
     </message>
     </context>
 <context>
@@ -441,11 +433,7 @@
         <source>%1 and %2</source>
         <translation>%1 dhe %2</translation>
     </message>
-    <message>
-        <source>unknown</source>
-        <translation>i/e panjohur</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>QObject::QObject</name>
     </context>
@@ -461,6 +449,10 @@
     <message>
         <source>&amp;Open</source>
         <translation>&amp;Hap</translation>
+    </message>
+    <message>
+        <source>&amp;Clear</source>
+        <translation>&amp;Pastro</translation>
     </message>
     <message>
         <source>never</source>
@@ -503,10 +495,6 @@
     <message>
         <source>Label</source>
         <translation>Etiketë</translation>
-    </message>
-    <message>
-        <source>Wallet</source>
-        <translation>Portofol</translation>
     </message>
     </context>
 <context>
@@ -644,6 +632,10 @@
         <translation>%1 konfirmimet</translation>
     </message>
     <message>
+        <source>, has not been successfully broadcast yet</source>
+        <translation>, nuk është transmetuar me sukses deri tani</translation>
+    </message>
+    <message>
         <source>Date</source>
         <translation>Data</translation>
     </message>
@@ -688,6 +680,10 @@
     <message>
         <source>Confirmed (%1 confirmations)</source>
         <translation>I/E konfirmuar(%1 konfirmime)</translation>
+    </message>
+    <message>
+        <source>This block was not received by any other nodes and will probably not be accepted!</source>
+        <translation>Ky bllok është marrë nga ndonjë nyje dhe ka shumë mundësi të mos pranohet! </translation>
     </message>
     <message>
         <source>Generated but not accepted</source>
@@ -765,9 +761,6 @@
     <name>UnitDisplayStatusBarControl</name>
     </context>
 <context>
-    <name>WalletController</name>
-    </context>
-<context>
     <name>WalletFrame</name>
     </context>
 <context>
@@ -776,7 +769,7 @@
         <source>Send Coins</source>
         <translation>Dërgo Monedha</translation>
     </message>
-    </context>
+</context>
 <context>
     <name>WalletView</name>
     <message>
@@ -786,6 +779,10 @@
     </context>
 <context>
     <name>bitcoin-core</name>
+    <message>
+        <source>Options:</source>
+        <translation>Opsionet:</translation>
+    </message>
     <message>
         <source>Solidus Core</source>
         <translation>Berthama Solidus</translation>

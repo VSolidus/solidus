@@ -14,10 +14,6 @@
         <translation>Dele active selectam inscriptionem ex enumeratione</translation>
     </message>
     <message>
-        <source>Enter address or label to search</source>
-        <translation>Insere inscriptionem vel titulum ut quaeras</translation>
-    </message>
-    <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Exporta data in hac tabella in plicam</translation>
     </message>
@@ -146,6 +142,10 @@
         <translation>Solidus</translation>
     </message>
     <message>
+        <source>Wallet</source>
+        <translation>Cassidile</translation>
+    </message>
+    <message>
         <source>&amp;Send</source>
         <translation>&amp;Mitte</translation>
     </message>
@@ -222,10 +222,6 @@
         <translation>Recentissimo</translation>
     </message>
     <message>
-        <source>&amp;Window</source>
-        <translation>&amp;Fenestra</translation>
-    </message>
-    <message>
         <source>Catching up...</source>
         <translation>Persequens...</translation>
     </message>
@@ -293,13 +289,17 @@
         <source>Command-line options</source>
         <translation>Optiones mandati initiantis</translation>
     </message>
-</context>
+    <message>
+        <source>Usage:</source>
+        <translation>Usus:</translation>
+    </message>
+    <message>
+        <source>command-line options</source>
+        <translation>Optiones mandati intiantis</translation>
+    </message>
+    </context>
 <context>
     <name>Intro</name>
-    <message>
-        <source>Solidus</source>
-        <translation>Solidus</translation>
-    </message>
     <message>
         <source>Error</source>
         <translation>Error</translation>
@@ -414,10 +414,6 @@
         <translation>Confirma optionum reconstituere</translation>
     </message>
     <message>
-        <source>Error</source>
-        <translation>Error</translation>
-    </message>
-    <message>
         <source>The supplied proxy address is invalid.</source>
         <translation>Inscriptio vicarii tradita non valida est.</translation>
     </message>
@@ -457,11 +453,7 @@
         <source>N/A</source>
         <translation>N/A</translation>
     </message>
-    <message>
-        <source>unknown</source>
-        <translation>ignotum</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>QObject::QObject</name>
     </context>
@@ -526,6 +518,14 @@
         <source>Clear console</source>
         <translation>Vacuefac terminale</translation>
     </message>
+    <message>
+        <source>Use up and down arrows to navigate history, and &lt;b&gt;Ctrl-L&lt;/b&gt; to clear screen.</source>
+        <translation>Utere sagittis sursum deorsumque ut per historiam naviges, et &lt;b&gt;Ctrl+L&lt;/b&gt; ut scrinium vacuefacias.</translation>
+    </message>
+    <message>
+        <source>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</source>
+        <translation>Scribe &lt;b&gt;help&lt;/b&gt; pro summario possibilium mandatorum.</translation>
+    </message>
     </context>
 <context>
     <name>ReceiveCoinsDialog</name>
@@ -547,10 +547,6 @@
     <message>
         <source>Copy &amp;Address</source>
         <translation>&amp;Copia Inscriptionem</translation>
-    </message>
-    <message>
-        <source>Wallet</source>
-        <translation>Cassidile</translation>
     </message>
     </context>
 <context>
@@ -597,10 +593,6 @@
     <message>
         <source>S&amp;end</source>
         <translation>&amp;Mitte</translation>
-    </message>
-    <message>
-        <source>Transaction fee</source>
-        <translation>Transactionis merces</translation>
     </message>
     </context>
 <context>
@@ -741,9 +733,6 @@
     <name>UnitDisplayStatusBarControl</name>
     </context>
 <context>
-    <name>WalletController</name>
-    </context>
-<context>
     <name>WalletFrame</name>
     </context>
 <context>
@@ -755,8 +744,44 @@
 <context>
     <name>bitcoin-core</name>
     <message>
+        <source>Options:</source>
+        <translation>Optiones:</translation>
+    </message>
+    <message>
+        <source>Specify data directory</source>
+        <translation>Specifica indicem datorum</translation>
+    </message>
+    <message>
+        <source>Connect to a node to retrieve peer addresses, and disconnect</source>
+        <translation>Conecta ad nodum acceptare inscriptiones parium, et disconecte</translation>
+    </message>
+    <message>
+        <source>Specify your own public address</source>
+        <translation>Specifica tuam propriam publicam inscriptionem</translation>
+    </message>
+    <message>
+        <source>Accept command line and JSON-RPC commands</source>
+        <translation>Accipe terminalis et JSON-RPC mandata.</translation>
+    </message>
+    <message>
+        <source>Run in the background as a daemon and accept commands</source>
+        <translation>Operare infere sicut daemon et mandata accipe</translation>
+    </message>
+    <message>
         <source>Solidus Core</source>
         <translation>Solidus Nucleus</translation>
+    </message>
+    <message>
+        <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
+        <translation>Conglutina ad inscriptionem datam et semper in eam ausculta.  Utere [moderatrum]:porta notationem pro IPv6</translation>
+    </message>
+    <message>
+        <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
+        <translation>Facere mandatum quotiescumque cassidilis transactio mutet (%s in mandato sbstituitur ab TxID)</translation>
+    </message>
+    <message>
+        <source>Block creation options:</source>
+        <translation>Optiones creandi frustorum:</translation>
     </message>
     <message>
         <source>Corrupted block database detected</source>
@@ -799,8 +824,20 @@
         <translation>Verificante frusta...</translation>
     </message>
     <message>
+        <source>Verifying wallet...</source>
+        <translation>Verificante cassidilem...</translation>
+    </message>
+    <message>
         <source>Information</source>
         <translation>Informatio</translation>
+    </message>
+    <message>
+        <source>Send trace/debug info to console instead of debug.log file</source>
+        <translation>Mitte informationem vestigii/debug ad terminale potius quam plicam debug.log</translation>
+    </message>
+    <message>
+        <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
+        <translation>Diminue plicam debug.log ad initium clientis (praedefinitum: 1 nisi -debug)</translation>
     </message>
     <message>
         <source>Signing transaction failed</source>
@@ -815,8 +852,32 @@
         <translation>Transactio nimis magna</translation>
     </message>
     <message>
+        <source>Username for JSON-RPC connections</source>
+        <translation>Nomen utentis pro conexionibus JSON-RPC</translation>
+    </message>
+    <message>
         <source>Warning</source>
         <translation>Monitio</translation>
+    </message>
+    <message>
+        <source>Password for JSON-RPC connections</source>
+        <translation>Tessera pro conexionibus JSON-RPC</translation>
+    </message>
+    <message>
+        <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
+        <translation>Pelle mandatum quando optissimum frustum mutat (%s in mandato substituitur ab hash frusti)</translation>
+    </message>
+    <message>
+        <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
+        <translation>Permitte quaerenda DNS pro -addnode, -seednode, et -connect</translation>
+    </message>
+    <message>
+        <source>Loading addresses...</source>
+        <translation>Legens inscriptiones...</translation>
+    </message>
+    <message>
+        <source>Invalid -proxy address: '%s'</source>
+        <translation>Inscriptio -proxy non valida: '%s'</translation>
     </message>
     <message>
         <source>Unknown network specified in -onlynet: '%s'</source>
@@ -831,12 +892,20 @@
         <translation>Legens indicem frustorum...</translation>
     </message>
     <message>
+        <source>Add a node to connect to and attempt to keep the connection open</source>
+        <translation>Adice nodum cui conectere et conare sustinere conexionem apertam</translation>
+    </message>
+    <message>
         <source>Loading wallet...</source>
         <translation>Legens cassidile...</translation>
     </message>
     <message>
         <source>Cannot downgrade wallet</source>
         <translation>Non posse cassidile regredi</translation>
+    </message>
+    <message>
+        <source>Cannot write default address</source>
+        <translation>Non posse scribere praedefinitam inscriptionem</translation>
     </message>
     <message>
         <source>Rescanning...</source>

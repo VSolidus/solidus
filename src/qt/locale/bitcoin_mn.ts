@@ -26,10 +26,6 @@
         <translation>Одоо сонгогдсон байгаа хаягуудыг жагсаалтаас устгах</translation>
     </message>
     <message>
-        <source>Enter address or label to search</source>
-        <translation>Хайлт хийхийн тулд хаяг эсвэл шошгыг оруул</translation>
-    </message>
-    <message>
         <source>Export the data in the current tab to a file</source>
         <translation>Сонгогдсон таб дээрхи дата-г экспортлох</translation>
     </message>
@@ -74,6 +70,10 @@
         <translation>Сүлжээтэй тааруулж байна...</translation>
     </message>
     <message>
+        <source>Node</source>
+        <translation>Нод</translation>
+    </message>
+    <message>
         <source>&amp;Transactions</source>
         <translation>Гүйлгээнүүд</translation>
     </message>
@@ -114,6 +114,10 @@
         <translation>&amp;Нууц Үгийг Солих...</translation>
     </message>
     <message>
+        <source>&amp;Receiving addresses...</source>
+        <translation>Хүлээн авах хаяг</translation>
+    </message>
+    <message>
         <source>Change the passphrase used for wallet encryption</source>
         <translation>Түрүйвчийг цоожлох нууц үгийг солих</translation>
     </message>
@@ -124,6 +128,10 @@
     <message>
         <source>Solidus</source>
         <translation>Solidus</translation>
+    </message>
+    <message>
+        <source>Wallet</source>
+        <translation>Түрүйвч</translation>
     </message>
     <message>
         <source>&amp;Show / Hide</source>
@@ -217,13 +225,13 @@
         <source>version</source>
         <translation>хувилбар</translation>
     </message>
+    <message>
+        <source>Usage:</source>
+        <translation>Хэрэглээ:</translation>
+    </message>
     </context>
 <context>
     <name>Intro</name>
-    <message>
-        <source>Solidus</source>
-        <translation>Solidus</translation>
-    </message>
     <message>
         <source>Error</source>
         <translation>Алдаа</translation>
@@ -246,6 +254,10 @@
         <translation>Сонголтууд</translation>
     </message>
     <message>
+        <source>MB</source>
+        <translation>МБ</translation>
+    </message>
+    <message>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>проксигийн IP хаяг (жишээ нь: IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
@@ -260,10 +272,6 @@
     <message>
         <source>Client restart required to activate changes.</source>
         <translation>Ѳѳрчлѳлтүүдийг идэвхижүүлхийн тулд клиентийг ахин эхлүүлэх шаардлагтай</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation>Алдаа</translation>
     </message>
     <message>
         <source>This change would require a client restart.</source>
@@ -293,11 +301,7 @@
         <source>N/A</source>
         <translation>Алга Байна</translation>
     </message>
-    <message>
-        <source>unknown</source>
-        <translation>үл мэдэгдэх</translation>
-    </message>
-</context>
+    </context>
 <context>
     <name>QObject::QObject</name>
     </context>
@@ -391,10 +395,6 @@
     <message>
         <source>Copy &amp;Address</source>
         <translation>Хаягийг &amp;Хуулбарлах</translation>
-    </message>
-    <message>
-        <source>Wallet</source>
-        <translation>Түрүйвч</translation>
     </message>
     </context>
 <context>
@@ -537,9 +537,6 @@
     <name>UnitDisplayStatusBarControl</name>
     </context>
 <context>
-    <name>WalletController</name>
-    </context>
-<context>
     <name>WalletFrame</name>
     </context>
 <context>
@@ -551,8 +548,24 @@
 <context>
     <name>bitcoin-core</name>
     <message>
+        <source>Options:</source>
+        <translation>Сонголтууд:</translation>
+    </message>
+    <message>
+        <source>Wallet options:</source>
+        <translation>Түрүйвчийн сонголтууд:</translation>
+    </message>
+    <message>
         <source>Information</source>
         <translation>Мэдээллэл</translation>
+    </message>
+    <message>
+        <source>Loading addresses...</source>
+        <translation>Хаягуудыг ачааллаж байна...</translation>
+    </message>
+    <message>
+        <source>Invalid -proxy address: '%s'</source>
+        <translation>Эдгээр прокси хаягнууд буруу байна: '%s'</translation>
     </message>
     <message>
         <source>Insufficient funds</source>
@@ -561,6 +574,10 @@
     <message>
         <source>Loading block index...</source>
         <translation>Блокийн индексүүдийг ачааллаж байна...</translation>
+    </message>
+    <message>
+        <source>Add a node to connect to and attempt to keep the connection open</source>
+        <translation>Холболт хийхийн тулд мѳн холболтой онгорхой хадгалхын тулд шинэ нод нэм</translation>
     </message>
     <message>
         <source>Loading wallet...</source>
