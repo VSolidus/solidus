@@ -1,14 +1,16 @@
-Solidus Core integration/staging tree
+VSolidus Core integration/staging tree
 =====================================
 
-What is Solidus?
+What is VSolidus?
 ----------------
 
-Solidus is an experimental digital currency that enables instant payments to
-anyone, anywhere in the world. Solidus uses peer-to-peer technology to operate
-with no central authority: managing transactions and issuing money are carried
-out collectively by the network. Solidus Core is the name of open source
-software which enables the use of this currency.
+VSolidus (Solidus) is the result of our joint efforts to develop a new, better and faster transactional coin that can serve as a good alternative to the current, industry standard Bitcoin. Various alternative currencies (alt coins) have come and gone. Some brought innovation, but they all had problems.
+
+Solidus is a peer-to-peer internet currency that allows instant, nearly free payments to anyone, anywhere in the world. Solidus is a global payment network that is fully decentralized and has no central authorities. No one can counterfeit transactions, initiate chargebacks, or seize funds. Not even a government. While this makes it harder to retrieve lost money, it also makes it harder to lose your money. With enough care, this coin is a far more practical alternative to FIAT money.
+
+Here at Solidus, we care about our community, we ensure your journey mining and transacting on our platform is a pleasant experience and there is always someone on hand to help.
+
+We reward and incentivise community members with free Solidus to help grow the community and further enhance the Solidus offering.
 
 License
 -------
