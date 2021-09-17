@@ -1,5 +1,5 @@
 # ===========================================================================
-#     https://www.gnu.org/software/autoconf-archive/ax_boost_chrono.html
+#      http://www.gnu.org/software/autoconf-archive/ax_boost_chrono.html
 # ===========================================================================
 #
 # SYNOPSIS
