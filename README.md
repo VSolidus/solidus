@@ -1,4 +1,4 @@
-VVSolidus Core integration/staging tree
+VSolidus Core integration/staging tree
 =====================================
 
 What is VSolidus?
