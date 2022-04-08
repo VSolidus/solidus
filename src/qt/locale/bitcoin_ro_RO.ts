@@ -1594,7 +1594,7 @@
         <translation>Rulează în fundal ca un demon şi acceptă comenzi</translation>
     </message>
     <message>
-        <source>Solidus Core</source>
+        <source>VSolidus Core</source>
         <translation>Nucleul Solidus</translation>
     </message>
     <message>

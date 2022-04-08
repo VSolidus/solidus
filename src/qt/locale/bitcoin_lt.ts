@@ -936,7 +936,7 @@
         <translation>Dirbti fone kaip šešėlyje ir priimti komandas</translation>
     </message>
     <message>
-        <source>Solidus Core</source>
+        <source>VSolidus Core</source>
         <translation>Solidus branduolys</translation>
     </message>
     <message>

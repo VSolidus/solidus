@@ -1590,8 +1590,8 @@
         <translation>Teci v ozadju in sprejemaj ukaze</translation>
     </message>
     <message>
-        <source>Solidus Core</source>
-        <translation>Solidus Core</translation>
+        <source>VSolidus Core</source>
+        <translation>VSolidus Core</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>

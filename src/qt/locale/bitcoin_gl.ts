@@ -1028,7 +1028,7 @@
         <translation>Executar no fondo como un demo e aceptar comandos</translation>
     </message>
     <message>
-        <source>Solidus Core</source>
+        <source>VSolidus Core</source>
         <translation>Core de Solidus</translation>
     </message>
     <message>

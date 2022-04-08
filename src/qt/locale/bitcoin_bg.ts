@@ -2346,7 +2346,7 @@
         <translation>Въведете Ваш публичен адрес</translation>
     </message>
     <message>
-        <source>Solidus Core</source>
+        <source>VSolidus Core</source>
         <translation>Solidus ядро</translation>
     </message>
     <message>

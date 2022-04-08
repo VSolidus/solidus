@@ -604,7 +604,7 @@
         <translation>Opciones:</translation>
     </message>
     <message>
-        <source>Solidus Core</source>
+        <source>VSolidus Core</source>
         <translation>nucleo Solidus</translation>
     </message>
     <message>

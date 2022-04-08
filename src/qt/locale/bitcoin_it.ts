@@ -2795,8 +2795,8 @@ Per specificare più URL separarli con una barra verticale "|".</translation>
         <translation>Impossibile avviare il server HTTP. Dettagli nel log di debug.</translation>
     </message>
     <message>
-        <source>Solidus Core</source>
-        <translation>Solidus Core</translation>
+        <source>VSolidus Core</source>
+        <translation>VSolidus Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

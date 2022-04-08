@@ -772,8 +772,8 @@
 </translation>
     </message>
     <message>
-        <source>Solidus Core</source>
-        <translation>solidus core</translation>
+        <source>VSolidus Core</source>
+        <translation>VSolidus Core</translation>
     </message>
     <message>
         <source>Error loading block database</source>

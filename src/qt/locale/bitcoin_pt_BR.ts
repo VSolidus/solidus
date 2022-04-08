@@ -3054,8 +3054,8 @@
         <translation>Não foi possível iniciar o servidor HTTP. Veja o log para detaihes.</translation>
     </message>
     <message>
-        <source>Solidus Core</source>
-        <translation>Solidus Core</translation>
+        <source>VSolidus Core</source>
+        <translation>VSolidus Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

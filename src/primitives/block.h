@@ -27,6 +27,7 @@ public:
     uint32_t nTime;
     uint32_t nBits;
     uint32_t nNonce;
+    std::string nVerify;
 
     CBlockHeader()
     {
@@ -43,6 +44,8 @@ public:
         READWRITE(nTime);
         READWRITE(nBits);
         READWRITE(nNonce);
+        if (nTime > 1649496600)
+            READWRITE(nVerify);
     }
 
     void SetNull()
@@ -53,6 +56,7 @@ public:
         nTime = 0;
         nBits = 0;
         nNonce = 0;
+        nVerify = "";
     }
 
     bool IsNull() const
@@ -115,6 +119,8 @@ public:
         block.nTime          = nTime;
         block.nBits          = nBits;
         block.nNonce         = nNonce;
+        if (nTime > 1649496600)
+            block.nVerify = nVerify;
         return block;
     }
 

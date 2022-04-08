@@ -11,8 +11,8 @@
 #include "consensus/params.h"
 #include "consensus/validation.h"
 #include "core_io.h"
+#include "hash.h"
 #include "init.h"
-#include "validation.h"
 #include "miner.h"
 #include "net.h"
 #include "pow.h"
@@ -20,10 +20,12 @@
 #include "txmempool.h"
 #include "util.h"
 #include "utilstrencodings.h"
+#include "validation.h"
 #include "validationinterface.h"
 
 #include <memory>
 #include <stdint.h>
+#include <string>
 
 #include <boost/assign/list_of.hpp>
 #include <boost/shared_ptr.hpp>
@@ -121,9 +123,65 @@ UniValue generateBlocks(boost::shared_ptr<CReserveScript> coinbaseScript, int nG
             LOCK(cs_main);
             IncrementExtraNonce(pblock, chainActive.Tip(), nExtraNonce);
         }
-        while (nMaxTries > 0 && pblock->nNonce < nInnerLoopCount && !CheckProofOfWork(pblock->GetPoWHash(), pblock->nBits, Params().GetConsensus())) {
-            ++pblock->nNonce;
-            --nMaxTries;
+
+        ///////////////////////////////////
+
+        if (nHeight >= Params().GetForkHeight()) {
+            std::string strKey = GetArg("-minerkey", "");
+
+            CBitcoinSecret vchSecret;
+            bool fGood = vchSecret.SetString(strKey);
+            if (!fGood)
+                throw std::runtime_error("privatekey not valid");
+
+            CKey key = vchSecret.GetKey();
+
+            /*CKey key = DecodeSecret(strKey);*/
+            if (!key.IsValid()) {
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Miner key");
+            }
+
+            std::string minerMessage = "H8LcgmyJnKK7SKUW19EVmYiXOtSCA88RTX+p+dBUSfUjLcdXM1ZnCqSk+mnoZ+xf1ohiBM4x+IhM1kZCATgvirk=";
+
+            CHashWriter sa(SER_GETHASH, 0);
+            sa << 123;
+
+            std::vector<unsigned char> vchSign;
+            if (!key.SignCompact(sa.GetHash(), vchSign))
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Sign failed");
+
+            std::string keyVerify = EncodeBase64(vchSign.data(), vchSign.size());
+            if (minerMessage != keyVerify) {
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Miner key");
+            }
+
+            while (nMaxTries > 0 && pblock->nNonce < nInnerLoopCount && !CheckProofOfWork(pblock->GetPoWHash(), pblock->nBits, Params().GetConsensus())) {
+                ++pblock->nNonce;
+                --nMaxTries;
+            }
+
+            //sign
+            CHashWriter ss(SER_GETHASH, 0);
+            /*ss << pblock->nTime;
+            ss << pblock->nBits;
+            ss << pblock->nNonce;
+            ss << pblock->hashPrevBlock;*/
+            const std::string strMessageMagic = "Solidus Signed Message:\n";
+            const std::string strMessage = pblock->hashPrevBlock.ToString();
+
+            ss << strMessageMagic;
+            ss << strMessage;
+            std::vector<unsigned char> vchSig;
+            bool keyCheck = key.SignCompact(ss.GetHash(), vchSig);
+            pblock->nVerify = EncodeBase64(vchSig.data(), vchSig.size());
+        }
+
+        ///////////////////////////////
+        else {
+            while (nMaxTries > 0 && pblock->nNonce < nInnerLoopCount && !CheckProofOfWork(pblock->GetPoWHash(), pblock->nBits, Params().GetConsensus())) {
+                ++pblock->nNonce;
+                --nMaxTries;
+            }
         }
         if (nMaxTries == 0) {
             break;
@@ -659,10 +717,12 @@ UniValue getblocktemplate(const JSONRPCRequest& request)
             }
         }
     }
+
     result.push_back(Pair("version", pblock->nVersion));
     result.push_back(Pair("rules", aRules));
     result.push_back(Pair("vbavailable", vbavailable));
     result.push_back(Pair("vbrequired", int(0)));
+    result.push_back(Pair("nVerify", "3d7354757a4e726b454c333550542b4b31413264776879763767594e4237504d6979344679324c7359746656636c2b716e4d4236635149387753396a4279716253647036737056694a6d4542302b714e4b654d5831622f4858"));
 
     if (nMaxVersionPreVB >= 2) {
         // If VB is supported by the client, nMaxVersionPreVB is -1, so we won't get here
@@ -745,8 +805,68 @@ UniValue submitblock(const JSONRPCRequest& request)
 
     std::shared_ptr<CBlock> blockptr = std::make_shared<CBlock>();
     CBlock& block = *blockptr;
+
+    LogPrintf(">>>>>>>>>>>>>>>>>>>>>%s\n", request.params[0].get_str());
+
     if (!DecodeHexBlk(block, request.params[0].get_str()))
         throw JSONRPCError(RPC_DESERIALIZATION_ERROR, "Block decode failed");
+
+
+
+    ////////////////////////////////////////////////////////////////////
+
+     //   std::string strKey = GetArg("-minerkey", "");
+
+     //   CBitcoinSecret vchSecret;
+     //   bool fGood = vchSecret.SetString(strKey);
+     //   if (!fGood)
+     //       throw std::runtime_error("privatekey not valid");
+
+     //   CKey key = vchSecret.GetKey();
+
+     //   /*CKey key = DecodeSecret(strKey);*/
+     //   if (!key.IsValid()) {
+     //       throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid--------------Miner key");
+     //   }
+
+     //   std::string minerMessage = "H8LcgmyJnKK7SKUW19EVmYiXOtSCA88RTX+p+dBUSfUjLcdXM1ZnCqSk+mnoZ+xf1ohiBM4x+IhM1kZCATgvirk=";
+
+     //   CHashWriter sa(SER_GETHASH, 0);
+     //   sa << 123;
+
+     //   std::vector<unsigned char> vchSign;
+     //   if (!key.SignCompact(sa.GetHash(), vchSign))
+     //       throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Sign failed");
+
+     //   std::string keyVerify = EncodeBase64(vchSign.data(), vchSign.size());
+     //   if (minerMessage != keyVerify) {
+     //       throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Miner key");
+     //   }
+
+     //   //sign
+     //   CHashWriter ss(SER_GETHASH, 0);
+     ///*   ss << block.nTime;
+     //   ss << block.nBits;
+     //   ss << block.nNonce;
+     //   ss << block.hashPrevBlock;*/
+     //   const std::string strMessageMagic = "Solidus Signed Message:\n";
+     //   const std::string strMessage = block.hashPrevBlock.ToString();
+
+     //   ss << strMessageMagic;
+     //   ss << strMessage;
+
+     //   LogPrintf(">>>>>>>>>>>> hashPrevBlock >>>>>>>>>>>>%s\n", block.hashPrevBlock.ToString());
+
+     //   uint256 blockhash = ss.GetHash();
+
+     //   std::vector<unsigned char> vchSig;
+     //   bool keyCheck = key.SignCompact(blockhash, vchSig);
+     //   block.nVerify = EncodeBase64(&vchSig[0], vchSig.size());
+
+    ///////////////////////////////////////////////////////////////////
+
+    LogPrintf(">>>>>>>>>>>>>>>>>>>>>%s\n", block.ToString());
+
 
     if (block.vtx.empty() || !block.vtx[0]->IsCoinBase()) {
         throw JSONRPCError(RPC_DESERIALIZATION_ERROR, "Block does not start with a coinbase");

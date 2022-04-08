@@ -2227,8 +2227,8 @@ Var vänlig och försök igen.</translation>
         <translation>Kunde inte starta HTTP-server. Se avlusningsloggen för detaljer.</translation>
     </message>
     <message>
-        <source>Solidus Core</source>
-        <translation>Solidus Core</translation>
+        <source>VSolidus Core</source>
+        <translation>VSolidus Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

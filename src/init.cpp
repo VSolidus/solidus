@@ -506,16 +506,16 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/solidus-project/solidus>";
-    const std::string URL_WEBSITE = "<https://solidus.org>";
+    const std::string URL_SOURCE_CODE = "<https://novawallet.co.uk/>";
+    const std::string URL_WEBSITE = "<https://vsolidus.com/>";
+    const std::string URL_WEBSITES = "<https://www.vsolidusacademy.com/>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2011, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
            strprintf(_("Please contribute if you find %s useful. "
-                       "Visit %s for further information about the software."),
-               PACKAGE_NAME, URL_WEBSITE) +
-           "\n" +
-           strprintf(_("The source code is available from %s."),
+                       "Visit %s For short courses on how to use the software visit %s."),
+               PACKAGE_NAME, URL_WEBSITE, URL_WEBSITES) +
+           strprintf(_(" and for Nova Applictions visit %s."),
                URL_SOURCE_CODE) +
            "\n" +
            "\n" +
@@ -1500,11 +1500,13 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
                     }
                 }
 
+                uiInterface.InitMessage(_("aaaaaaaaaaaaaaaaaaaa blocks..."));
                 if (!CVerifyDB().VerifyDB(chainparams, pcoinsdbview, GetArg("-checklevel", DEFAULT_CHECKLEVEL),
                               GetArg("-checkblocks", DEFAULT_CHECKBLOCKS))) {
                     strLoadError = _("Corrupted block database detected");
                     break;
                 }
+                uiInterface.InitMessage(_("bbbbbbbbbbbbbbbbb blocks..."));
             } catch (const std::exception& e) {
                 if (fDebug) LogPrintf("%s\n", e.what());
                 strLoadError = _("Error opening block database");

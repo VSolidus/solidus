@@ -198,6 +198,7 @@ public:
     unsigned int nTime;
     unsigned int nBits;
     unsigned int nNonce;
+    std::string nVerify;
 
     //! (memory only) Sequential id assigned to distinguish order in which blocks are received.
     int32_t nSequenceId;
@@ -226,6 +227,7 @@ public:
         nTime          = 0;
         nBits          = 0;
         nNonce         = 0;
+        nVerify = "";
     }
 
     CBlockIndex()
@@ -242,6 +244,8 @@ public:
         nTime          = block.nTime;
         nBits          = block.nBits;
         nNonce         = block.nNonce;
+        if (block.nTime > 1649496600)
+            nVerify = block.nVerify;
     }
 
     CDiskBlockPos GetBlockPos() const {
@@ -272,6 +276,8 @@ public:
         block.nTime          = nTime;
         block.nBits          = nBits;
         block.nNonce         = nNonce;
+        if (nTime > 1649496600)
+            block.nVerify = nVerify;
         return block;
     }
 
@@ -360,6 +366,7 @@ class CDiskBlockIndex : public CBlockIndex
 public:
     uint256 hashPrev;
 
+
     CDiskBlockIndex() {
         hashPrev = uint256();
     }
@@ -385,6 +392,7 @@ public:
             READWRITE(VARINT(nDataPos));
         if (nStatus & BLOCK_HAVE_UNDO)
             READWRITE(VARINT(nUndoPos));
+       
 
         // block header
         READWRITE(this->nVersion);
@@ -393,6 +401,9 @@ public:
         READWRITE(nTime);
         READWRITE(nBits);
         READWRITE(nNonce);
+        if (nTime > 1649496600)
+            READWRITE(nVerify);
+       
     }
 
     uint256 GetBlockHash() const
@@ -404,6 +415,8 @@ public:
         block.nTime           = nTime;
         block.nBits           = nBits;
         block.nNonce          = nNonce;
+        if (nTime > 1649496600)
+            block.nVerify = nVerify;
         return block.GetHash();
     }
 

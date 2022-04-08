@@ -1,11 +1,11 @@
-Solidus Core 3.0.0
+VSolidus Core 3.0.0
 =====================
 
 Setup
 ---------------------
-Solidus Core is the original Solidus client and it builds the backbone of the network. However, it downloads and stores the entire history of Solidus transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+VSolidus Core is the original Solidus client and it builds the backbone of the network. However, it downloads and stores the entire history of Solidus transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
-To download Solidus Core, visit [solidus.org](https://solidus.org).
+To download VSolidus Core, visit [solidus.org](https://solidus.org).
 
 Running
 ---------------------
@@ -28,7 +28,7 @@ Drag Solidus-Core to your applications folder, and then run Solidus-Core.
 
 ### Need Help?
 
-* See the documentation at the [Solidus Wiki](https://solidus.info/)
+* See the documentation at the [Solidus Wiki](https://vsolidus.com/)
 for help and more information.
 * Ask for help on [#solidus](http://webchat.freenode.net?channels=solidus) on Freenode. If you don't have an IRC client use [webchat here](http://webchat.freenode.net?channels=solidus).
 * Ask for help on the [SolidusTalk](https://solidustalk.io/) forums.

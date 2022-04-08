@@ -3953,8 +3953,8 @@
     </message>
     <message>
         <location line="-360"/>
-        <source>Solidus Core</source>
-        <translation type="unfinished">Solidus Core</translation>
+        <source>VSolidus Core</source>
+        <translation type="unfinished">VSolidus Core</translation>
     </message>
     <message>
         <location line="+1"/>

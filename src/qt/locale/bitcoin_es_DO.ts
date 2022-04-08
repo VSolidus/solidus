@@ -1123,7 +1123,7 @@
 </translation>
     </message>
     <message>
-        <source>Solidus Core</source>
+        <source>VSolidus Core</source>
         <translation>Núcleo de Solidus</translation>
     </message>
     <message>

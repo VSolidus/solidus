@@ -24,7 +24,7 @@ In case you want to build the disk image with `make deploy` (.dmg / optional), y
 
 NOTE: Building with Qt4 is still supported, however, could result in a broken UI. Building with Qt5 is recommended.
 
-Build Solidus Core
+Build solidus Core
 ------------------------
 
 1. Clone the solidus source code and cd into `solidus`
@@ -53,7 +53,7 @@ Build Solidus Core
 Running
 -------
 
-Solidus Core is now available at `./src/solidusd`
+solidus Core is now available at `./src/solidusd`
 
 Before running, it's recommended you create an RPC configuration file.
 

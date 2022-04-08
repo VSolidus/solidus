@@ -122,7 +122,7 @@ NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from 
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign Solidus Core for Linux, Windows, and OS X:
+### Build and sign VSolidus Core for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
     ./bin/gbuild --memory 3000 --commit solidus=v${VERSION} ../solidus/contrib/gitian-descriptors/gitian-linux.yml

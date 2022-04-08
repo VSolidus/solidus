@@ -1,4 +1,4 @@
-Solidus Core 3.0.0
+VSolidus Core 3.0.0
 =====================
 
 Intro
@@ -13,7 +13,7 @@ Setup
 -----
 Unpack the files into a directory and run solidus-qt.exe.
 
-Solidus Core is the original Solidus client and it builds the backbone of the network.
+VSolidus Core is the original Solidus client and it builds the backbone of the network.
 However, it downloads and stores the entire history of Solidus transactions;
 depending on the speed of your computer and network connection, the synchronization
 process can take anywhere from a few hours to a day or more.

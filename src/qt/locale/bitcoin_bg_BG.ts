@@ -420,7 +420,7 @@
 <context>
     <name>bitcoin-core</name>
     <message>
-        <source>Solidus Core</source>
+        <source>VSolidus Core</source>
         <translation>Solidus ядро</translation>
     </message>
     </context>

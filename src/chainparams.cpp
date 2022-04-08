@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2021 The Bitcoin Core developers
-// Copyright (c) 2021 VSolidus Core developers
+// Copyright (c) 2021-2022 The VSolidus Core Developers.
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -85,6 +85,7 @@ public:
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 6048; // 75% of 8064
         consensus.nMinerConfirmationWindow = 8064; // nPowTargetTimespan / nPowTargetSpacing * 4
+        nforkheight = 515425;
 		/*
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
@@ -126,7 +127,14 @@ public:
 
         // Note that of those with the service bits flag, most only support a subset of possible options
         vSeeds.push_back(CDNSSeedData("213.171.213.15", "213.171.213.15", true));
+		vSeeds.push_back(CDNSSeedData("88.208.214.123", "88.208.214.123", true));
+		vSeeds.push_back(CDNSSeedData("88.208.224.241", "88.208.224.241", true));
+		vSeeds.push_back(CDNSSeedData("185.132.40.178", "185.132.40.178", true));
+		vSeeds.push_back(CDNSSeedData("185.132.40.169", "185.132.40.169", true));
+		vSeeds.push_back(CDNSSeedData("77.68.35.177", "77.68.35.177", true));
+		vSeeds.push_back(CDNSSeedData("77.68.48.205", "77.68.48.205", true));			
         vSeeds.push_back(CDNSSeedData("77.68.74.226", "77.68.74.226", true));
+        vSeeds.push_back(CDNSSeedData("77.68.100.148", "77.68.100.148", true));		
         vSeeds.push_back(CDNSSeedData("185.132.40.137", "185.132.40.137", true));
         vSeeds.push_back(CDNSSeedData("77.68.91.233", "77.68.91.233", true));
         vSeeds.push_back(CDNSSeedData("185.132.40.230", "185.132.40.230", true));
@@ -166,7 +174,17 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  0, uint256S("0x862b37af3035f184aadd5f02d0c1bcd678a8e9bd834cd1ecb17782bd1e3dc44b"))
+            (0, uint256S("0x862b37af3035f184aadd5f02d0c1bcd678a8e9bd834cd1ecb17782bd1e3dc44b"))
+            (71500, uint256S("0xef9ec5c24b58cd9ac2b1eded63b15a9fd78b30b79b9d2a51b8f91077a13222e9"))
+            (141545, uint256S("0x15119536f8383404a19b1a94c95619c4a99f298f04fd2b86767ee8a4ca638ba5"))
+            (218600, uint256S("0x20f404c7e8bdccb1a6af2ae35f6c533e64453a88cd7a153c09bfcb3d7158b891"))
+            (278485, uint256S("0xce38cfef21a328aed79fab48f9845f4a5ac0498768b1b363d3e3d4f6a4eb7c58"))
+            (310101, uint256S("0xbe6f2d147a8befaf651a751287fc11cf01539f79e43f858d00e252c702ade41f"))
+            (385425, uint256S("0x6376de66d30691448c9bd7ad372dfc3cf78e6da33e4c3a368d8e74c64efe9046"))
+            (405145, uint256S("0xa04041203690631ba8c4a5b6df51833e37c1192831f7fe91139151f0706cf18f"))
+            (450400, uint256S("0xed71785359d9523ebc95f8656e5cb52524156a531cd4e856c7a673333a09a84c"))
+            (497256, uint256S("0x98918c3c80bd71f97230bcdab370113fdac8d7fa9719fcc0823c6b5c33535732"))
+            (514630, uint256S("0xb815ddd745112c2dc9476ae868e4ef17f9a3212a4f86121559fe3cf3352887b4"))
         };
 
         chainTxData = ChainTxData{

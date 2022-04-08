@@ -1,4 +1,4 @@
-VSolidus Core integration/staging tree
+VVSolidus Core integration/staging tree
 =====================================
 
 What is VSolidus?
@@ -15,7 +15,7 @@ We reward and incentivise community members with free Solidus to help grow the c
 License
 -------
 
-Solidus Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+VSolidus Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
 Development Process
@@ -23,7 +23,7 @@ Development Process
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
 completely stable. [Tags] are created
-regularly to indicate new official, stable release versions of Solidus Core.
+regularly to indicate new official, stable release versions of VSolidus Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md)
 and useful hints for developers can be found in [doc/developer-notes.md](doc/developer-notes.md).
